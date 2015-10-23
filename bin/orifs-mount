@@ -7,5 +7,9 @@ if ! which orifs >/dev/null 2>&1 ; then
     echo "ERROR: orifs not found."
     exit 1
 fi
+if [ "x" = "x${MNTPOINT}" ]; then
+    echo "ERROR: 2 args required."
+    exit 1
+fi
 
 orifs --repo=${FSNAME} ${MNTPOINT}
