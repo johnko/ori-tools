@@ -1,0 +1,11 @@
+#!/bin/sh
+
+FSNAME=${1}
+
+if ! which ori >/dev/null 2>&1 ; then
+    echo "ERROR: ori not found."
+    exit 1
+fi
+
+ori newfs ${FSNAME}
+ori list | grep ${FSNAME}

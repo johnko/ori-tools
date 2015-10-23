@@ -1,0 +1,11 @@
+#!/bin/sh
+
+FSNAME=${1}
+MNTPOINT=${2}
+
+if ! which orifs >/dev/null 2>&1 ; then
+    echo "ERROR: orifs not found."
+    exit 1
+fi
+
+orifs --repo=${FSNAME} ${MNTPOINT}

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+FSNAME=${1}
+
+if ! which orisync >/dev/null 2>&1 ; then
+    echo "ERROR: orisync not found."
+    exit 1
+fi
+
+orisync init
+orisync add ${FSNAME}
+orisync list | grep ${FSNAME}
